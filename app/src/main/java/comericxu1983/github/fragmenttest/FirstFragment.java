@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -30,6 +31,7 @@ public class FirstFragment extends BaseFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextView textView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -74,8 +76,12 @@ public class FirstFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_first, container, false);
+        textView = (TextView)rootView.findViewById(R.id.text);
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
